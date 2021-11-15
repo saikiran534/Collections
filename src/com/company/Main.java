@@ -38,10 +38,27 @@ public class Main {
             Comment.add(comment2);
             Comment.add(comment3);
         }
+        System.out.println(" Task 1");
+        System.out.println("   \n   ");
+        System.out.println("Customer Details");
         for (Customer C : Customers) {
-            System.out.println(C.getEmail()+":"+C.getName());
-            
+            System.out.println("Email :"+C.getEmail()+"  Name :"+C.getName());
         }
+        System.out.println("   \n   ");
+        System.out.println("Task 2");
+        System.out.println("Post Details");
+        for (Posts p: Post
+             ) {
+            System.out.println("Post Id : "+ p.getPostID()+"  E mail Id :"+p.getEmail()+"  Heading :"+p.getHeading()+"  Description : "+p.getDescription());
+
+        }
+        System.out.println("   \n   ");
+        System.out.println("Comment Details");
+        for (Comments com : Comment
+             ) {
+            System.out.println("Post Id: "+ com.getPostID()+"  Email ID: " +com.getEmail()+"  Comment: "+com.getComment());
+        }
+
 
 
     }
