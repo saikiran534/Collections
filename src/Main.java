@@ -28,12 +28,12 @@ public class Main {
             Posts post2 = new Posts("p2","sai@gmail.com","H2","About Food");
             Posts post3= new Posts("p3","Srinivas@gmail.com","H2","About Organisation ");
             Posts post4= new Posts("p4","kiran@gmail.com","H3","About Work ");
-            Posts post5 = new Posts("p5","kiran@gmail.com","H4","Personal Comments  ");
+            //Posts post5 = new Posts("p5","kiran@gmail.com","H4","Personal Comments  ");
             Post.add(post1);
             Post.add(post2);
             Post.add(post3);
             Post.add(post4);
-            Post.add(post5);
+            //Post.add(post5);
 
         }
         List<Comments> Comment = new ArrayList<>();
@@ -42,7 +42,7 @@ public class Main {
             Comments comment2 = new Comments("p2","Sai@gmail.com"," Its the best place to learn the technologies");
             Comments comment3 = new Comments("p3","Srinivas@gmail.com","Nice Place ");
             Comments comment4 = new Comments("p4","kiran@gmail.com","its an beautiful location to prepare and work ");
-            Comments comment5 = new Comments("p5","kiran@gmail.com","its an beautiful location to prepare and work ");
+            Comments comment5 = new Comments("p5","kiran@gmail.com", "");
             Comment.add(comment1);
             Comment.add(comment2);
             Comment.add(comment3);
@@ -59,7 +59,7 @@ public class Main {
             System.out.println("Email :"+C.getEmail()+"; Name:"+C.getName());
         }
         System.out.println("");
-        System.out.println("Task 2");
+        System.out.println("Task 3");
         System.out.println("");
 
 //        for (int i = 0; i< Comment.size(); i++)
@@ -79,7 +79,7 @@ public class Main {
 
                 boolean cond = C.getEmail().equals(p.getEmail());
                 if(cond==true) {
-                    System.out.println("Customer Name : " + C.getName() + "; " + "Heading : " + p.getHeading() + "; " + "Description : " + p.getDescription() + "; ");
+                    System.out.println("Customer Name : " + C.getName() + "; \n" + "Heading : " + p.getHeading() + "; \n" + "Description : " + p.getDescription() + "; \n");
                 }
             }
         }
@@ -91,16 +91,24 @@ public class Main {
             {
                 for (Posts pos: Post) {
 
-                    boolean condition1 = pos.getPostID().equals(Comm.getPostID()) && pos.getEmail().equals(cus.getEmail());
+                    boolean condition1 = (pos.getPostID().equals(Comm.getPostID())) && (pos.getEmail().equals(cus.getEmail())&&(Comm.getComment().equals(" ")));
 
                     if(condition1 == true)
                     {
-                        System.out.println("Name : "+cus.getName()+"; Heading : "+pos.getHeading()+"; Description : "+ pos.getDescription()+"; Comment : "+ Comm.getComment()+"; Customer Name : "+cus.getName());
+                        System.out.println(" Name : "+cus.getName()+";\n Heading : "+pos.getHeading()+";\n Description : "+ pos.getDescription()+";\n Comment : "+ Comm.getComment()+"; ");
                     }
 
+                    if (Comm.getComment()==null)
+                    {
+                        System.out.println("the people who not gave any comment "+ cus.getName() +";"+cus.getEmail()+";"+pos.getHeading()+";"+pos.getDescription());
+                    }
                 }
-                
+
+
+
             }
+
+            System.out.println();
 
            // System.out.println("Email :"+C.getEmail()+"; Name:"+C.getName());
         }
