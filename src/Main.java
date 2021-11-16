@@ -1,6 +1,6 @@
-package com.company.models;
-
-
+import com.company.models.Comments;
+import com.company.models.Customer;
+import com.company.models.Posts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,7 @@ public class Main {
         {
             Customer c1 = new Customer("vemula", "Vemula@gmail.com");
             Customer c2 = new Customer("sai", "sai@gmail.com");
-
             Customer c3 = new Customer("Kiran", "kiran@gmail.com");
-
             Customer c4 = new Customer("Srinivas","Srinivas@gmai.com");
 
             Customers.add(c1);
@@ -29,7 +27,6 @@ public class Main {
             Posts post1= new Posts("p1","Vemula@gmail.com","H1","About Organisation");
             Posts post2 = new Posts("p2","sai@gmail.com","H2","About Food");
             Posts post3= new Posts("p3","Srinivas@gmail.com","H2","About Organisation ");
-
             Posts post4= new Posts("p4","kiran@gmail.com","H3","About Work ");
             Posts post5 = new Posts("p5","kiran@gmail.com","H4","Personal Comments  ");
             Post.add(post1);
@@ -46,8 +43,6 @@ public class Main {
             Comments comment3 = new Comments("p3","Srinivas@gmail.com","Nice Place ");
             Comments comment4 = new Comments("p4","kiran@gmail.com","its an beautiful location to prepare and work ");
             Comments comment5 = new Comments("p5","kiran@gmail.com","its an beautiful location to prepare and work ");
-
-
             Comment.add(comment1);
             Comment.add(comment2);
             Comment.add(comment3);
@@ -95,7 +90,10 @@ public class Main {
             for (Customer cus : Customers)
             {
                 for (Posts pos: Post) {
-                    if(pos.getPostID()==Comm.getPostID() && pos.getEmail()== cus.getEmail())
+
+                    boolean condition1 = pos.getPostID().equals(Comm.getPostID()) && pos.getEmail().equals(cus.getEmail());
+
+                    if(condition1 == true)
                     {
                         System.out.println("Name : "+cus.getName()+"; Heading : "+pos.getHeading()+"; Description : "+ pos.getDescription()+"; Comment : "+ Comm.getComment()+"; Customer Name : "+cus.getName());
                     }
